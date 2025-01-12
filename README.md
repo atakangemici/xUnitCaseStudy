@@ -18,7 +18,7 @@ Success Message: If all steps are completed successfully, a "Registration succes
 
 This flow includes basic validation checks to ensure the accuracy of the information provided by the user.
 
-### UML Diagram
+### Case UML Diagram
 
 ![image](https://github.com/user-attachments/assets/0c120f4f-1fb4-4ce1-9571-55d3dbca849a)
 
