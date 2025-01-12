@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "9ihPCy6iXq+Tg7Ws3BlppNsxwEBBen6jqFJE2jyU8SRHyxx+ZUHeAGUMp+AgOpqZqyTJ81c5k3D4jTPQjSwY0A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ataka\\OneDrive\\Desktop\\xUnitCaseStudy\\xUnitCaseStudy.App\\xUnitCaseStudy.App.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ataka\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\9.0.0\\microsoft.extensions.dependencyinjection.9.0.0.nupkg.sha512",
+    "C:\\Users\\ataka\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.0\\microsoft.extensions.dependencyinjection.abstractions.9.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,77 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\atakan.gemici\\source\\repos\\xUnitCaseStudy\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8BCFE35E-EBDC-45F1-B8FC-AAD55815F049}|xUnitCaseStudy\\xUnitCaseStudy.Tests.csproj|c:\\users\\atakan.gemici\\source\\repos\\xunitcasestudy\\xunitcasestudy\\tests\\userregistrationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8BCFE35E-EBDC-45F1-B8FC-AAD55815F049}|xUnitCaseStudy\\xUnitCaseStudy.Tests.csproj|solutionrelative:xunitcasestudy\\tests\\userregistrationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A80E58C-A683-4273-A2D1-C1EC4F96A4BF}|xUnitCaseStudy.App\\xUnitCaseStudy.App.csproj|c:\\users\\atakan.gemici\\source\\repos\\xunitcasestudy\\xunitcasestudy.app\\app\\userregister.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A80E58C-A683-4273-A2D1-C1EC4F96A4BF}|xUnitCaseStudy.App\\xUnitCaseStudy.App.csproj|solutionrelative:xunitcasestudy.app\\app\\userregister.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A80E58C-A683-4273-A2D1-C1EC4F96A4BF}|xUnitCaseStudy.App\\xUnitCaseStudy.App.csproj|c:\\users\\atakan.gemici\\source\\repos\\xunitcasestudy\\xunitcasestudy.app\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A80E58C-A683-4273-A2D1-C1EC4F96A4BF}|xUnitCaseStudy.App\\xUnitCaseStudy.App.csproj|solutionrelative:xunitcasestudy.app\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\atakan.gemici\\source\\repos\\xUnitCaseStudy\\xUnitCaseStudy.App\\Program.cs",
+              "RelativeDocumentMoniker": "xUnitCaseStudy.App\\Program.cs",
+              "ToolTip": "C:\\Users\\atakan.gemici\\source\\repos\\xUnitCaseStudy\\xUnitCaseStudy.App\\Program.cs",
+              "RelativeToolTip": "xUnitCaseStudy.App\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-20T13:42:45.707Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserRegister.cs",
+              "DocumentMoniker": "C:\\Users\\atakan.gemici\\source\\repos\\xUnitCaseStudy\\xUnitCaseStudy.App\\App\\UserRegister.cs",
+              "RelativeDocumentMoniker": "xUnitCaseStudy.App\\App\\UserRegister.cs",
+              "ToolTip": "C:\\Users\\atakan.gemici\\source\\repos\\xUnitCaseStudy\\xUnitCaseStudy.App\\App\\UserRegister.cs",
+              "RelativeToolTip": "xUnitCaseStudy.App\\App\\UserRegister.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-20T14:04:50.922Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserRegistrationTests.cs",
+              "DocumentMoniker": "C:\\Users\\atakan.gemici\\source\\repos\\xUnitCaseStudy\\xUnitCaseStudy\\Tests\\UserRegistrationTests.cs",
+              "RelativeDocumentMoniker": "xUnitCaseStudy\\Tests\\UserRegistrationTests.cs",
+              "ToolTip": "C:\\Users\\atakan.gemici\\source\\repos\\xUnitCaseStudy\\xUnitCaseStudy\\Tests\\UserRegistrationTests.cs",
+              "RelativeToolTip": "xUnitCaseStudy\\Tests\\UserRegistrationTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-20T13:41:47.582Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
