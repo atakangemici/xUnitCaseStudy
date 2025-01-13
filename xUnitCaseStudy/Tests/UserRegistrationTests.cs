@@ -18,74 +18,23 @@ namespace xUnitCaseStudy.Tests
             _mockUserOutput = new Mock<IUserOutput>();
         }
 
-        //Bu Test Ne Yapıyor?
-        //Test, kullanıcı kaydı sırasında adı çok kısa olan bir giriş için doğru hatanın yazdırıldığını doğruluyor.
-
-        //Bu Test Neden Önemli?
-        //Kullanıcıdan alınan ismin minimum uzunluk kontrolü yapılır.
-        //Sistem, geçersiz girişleri doğru şekilde tespit edip, kullanıcıyı bilgilendirir.
-        //Mock nesneler sayesinde, kullanıcı girdisi ve çıktısı gibi dış bağımlılıklar test ortamında izole edilir.
-
-        //Unit Test Method Name : 3 Kısma Ayrılabilir.
-        //1. Kısım : Test Edilen Metot İsmi (RegisterUser)
-        //2. Kısım : Beklenen Davranış (Should Print Name Invalid)
-        //3. Kısım : Testin Şartı - Condition (When Name Is Too Short)
-
-        //Fact Attribute, xUnit test çerçevesinde kullanılan bir özelliktir ve bir metodu bir test metodu olarak işaretler.
         [Fact]
         public void RegisterUser_ShouldPrintNameInvalid_WhenNameIsTooShort()
         {
-            //3A Pattern
-            //Arrange ile gerekli düzenlemeler yapılır (mock nesneler ve test ortamı hazırlanır).
-            //Act ile test edilen kod çalıştırılır.       
-            //Assert ile beklenen sonuçların elde edilip edilmediği kontrol edilir.
-
-
-            ////Arrange
-
-            //Bu aşamada test senaryosu için gerekli olan tüm bağımlılıklar ve başlangıç durumu ayarlanır.
-            //Dummy Data ile Mock Nesnelerinin Ayarlanması
-
+            //Arrange
             _mockUserInput.SetupSequence(input => input.GetInput())
-                     .Returns("A")  // Name'in kısa olması
+                     .Returns("A") //Name is short.
                      .Returns("Gemici")
                      .Returns("5368672145")
                      .Returns("12345678");
 
             var userRegistration = new UserRegister(_mockUserInput.Object, _mockUserOutput.Object);
 
-            //Amaç: SetupSequence GetInput metoduna yapılan her çağrının sıralı bir girdiyi döndürmesini sağlamak.
-            //Kullanıcı, adı, soyadı, telefon numarası ve şifre bilgilerini sırasıyla giriyor gibi simüle edilir.
-
-            //Şu durumu kontrol eder:
-            //Kullanıcı adı "A" olduğunda(çok kısa),
-            //WriteOutput("Name is invalid.") validasyonunun çağrılıp çağrılmadığını kontrol eder.
-
-
-            ////Act
-
-            //Bu satır, test edilen kodun çağrılmasını sağlar.
-            //Act bölümü, bir birim testinde işlem adımını ifade eder. İşlem, testin amacına uygun olarak
-            //bir metodun çağrılmasını veya bir işlemin gerçekleştirilmesini içerir.
+            //Act
             userRegistration.RegisterUser();
 
-            //// Assert 
-
-            //Bu satır, Yazılan testin doğru şekilde çalışıp çalışmadığını doğrulamak için kullanılır.
-            //output.WriteOutput "Name is invalid." mesajını, metodun çağrıldığı sırada gönderilen mesaj olduğunu ifade eder.
+            //Assert 
             _mockUserOutput.Verify(output => output.WriteOutput("Name is invalid."));
-
-            //Eğer: Metod tam olarak doğru argümanla çağrılmışsa: Test başarılı olur.
-
-
-
-
-
-            //Doğru Test Prensipleri:
-            //Pozitif ve Negatif Senaryoları Test Etme:
-
-            //Pozitif Senaryo: Doğru verilerle doğru çıktıyı kontrol etme.
-            //Negatif Senaryo: Hatalı veya eksik verilerle beklenen hata durumunu kontrol etme.
         }
 
         [Fact]
@@ -94,7 +43,7 @@ namespace xUnitCaseStudy.Tests
             // Arrange
             _mockUserInput.SetupSequence(input => input.GetInput())
                      .Returns("Atakan")
-                     .Returns("G")  // Surname'in kısa olması
+                     .Returns("G") //Surname is short.
                      .Returns("5368672145")
                      .Returns("12345678");
 
@@ -114,7 +63,7 @@ namespace xUnitCaseStudy.Tests
             _mockUserInput.SetupSequence(input => input.GetInput())
                      .Returns("Atakan")
                      .Returns("Gemici")
-                     .Returns("536867")  // Geçersiz telefon numarası
+                     .Returns("536867") //Invalid telephone number.
                      .Returns("12345678");
 
             var userRegistration = new UserRegister(_mockUserInput.Object, _mockUserOutput.Object);
@@ -134,7 +83,7 @@ namespace xUnitCaseStudy.Tests
                      .Returns("Atakan")
                      .Returns("Gemici")
                      .Returns("5368672145")
-                     .Returns("1234567");  // Zayıf şifre
+                     .Returns("1234567"); // Weak password
 
             var userRegistration = new UserRegister(_mockUserInput.Object, _mockUserOutput.Object);
 
