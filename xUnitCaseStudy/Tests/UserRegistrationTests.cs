@@ -1,6 +1,5 @@
 ﻿using Moq;
 using System;
-using System.Diagnostics.Metrics;
 using Xunit;
 using xUnitCaseStudy.App;
 
@@ -8,7 +7,7 @@ namespace xUnitCaseStudy.Tests
 {
     public class UserRegistrationTests
     {
-        //Mocking işlemleri,Mock(Sahte) Instance yaratma
+        //Mocking operations, creating a Mock (Fake) Instance
         private readonly Mock<IUserInput> _mockUserInput;
         private readonly Mock<IUserOutput> _mockUserOutput;
 
