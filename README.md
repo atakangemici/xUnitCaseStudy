@@ -22,7 +22,4 @@ This flow includes basic validation checks to ensure the accuracy of the informa
 
 ![image](https://github.com/user-attachments/assets/0c120f4f-1fb4-4ce1-9571-55d3dbca849a)
 
-### Code Coverage
-
-![image](https://github.com/user-attachments/assets/fe6479c9-1519-4689-bdc1-336dda326a08)
 
