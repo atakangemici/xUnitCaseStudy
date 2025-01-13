@@ -8,6 +8,7 @@ namespace xUnitCaseStudy.Tests
 {
     public class UserRegistrationTests
     {
+        //Mocking işlemleri,Mock(Sahte) Instance yaratma
         private readonly Mock<IUserInput> _mockUserInput;
         private readonly Mock<IUserOutput> _mockUserOutput;
 
@@ -17,29 +18,34 @@ namespace xUnitCaseStudy.Tests
             _mockUserOutput = new Mock<IUserOutput>();
         }
 
-        //Arrange ile gerekli düzenlemeler yapılır (mock nesneler ve test ortamı hazırlanır).
-        //Act ile test edilen kod çalıştırılır.       
-        //Assert ile beklenen sonuçların elde edilip edilmediği kontrol edilir.
+        //Bu Test Ne Yapıyor?
+        //Test, kullanıcı kaydı sırasında adı çok kısa olan bir giriş için doğru hatanın yazdırıldığını doğruluyor.
+
+        //Bu Test Neden Önemli?
+        //Kullanıcıdan alınan ismin minimum uzunluk kontrolü yapılır.
+        //Sistem, geçersiz girişleri doğru şekilde tespit edip, kullanıcıyı bilgilendirir.
+        //Mock nesneler sayesinde, kullanıcı girdisi ve çıktısı gibi dış bağımlılıklar test ortamında izole edilir.
 
         //Unit Test Method Name : 3 Kısma Ayrılabilir.
         //1. Kısım : Test Edilen Metot İsmi (RegisterUser)
         //2. Kısım : Beklenen Davranış (Should Print Name Invalid)
         //3. Kısım : Testin Şartı - Condition (When Name Is Too Short)
-        [Fact] //Attribute, xUnit test çerçevesinde kullanılan bir özelliktir ve bir metodu bir test metodu olarak işaretler.
+
+        //Fact Attribute, xUnit test çerçevesinde kullanılan bir özelliktir ve bir metodu bir test metodu olarak işaretler.
+        [Fact]
         public void RegisterUser_ShouldPrintNameInvalid_WhenNameIsTooShort()
         {
-            //Bu Test Neden Önemli?
-            //Kullanıcıdan alınan ismin minimum uzunluk kontrolü yapılır.
-            //Sistem, geçersiz girişleri doğru şekilde tespit edip, kullanıcıyı bilgilendirir.
-            //Mock nesneler sayesinde, kullanıcı girdisi ve çıktısı gibi dış bağımlılıklar test ortamında izole edilir.
+            //3A Pattern
+            //Arrange ile gerekli düzenlemeler yapılır (mock nesneler ve test ortamı hazırlanır).
+            //Act ile test edilen kod çalıştırılır.       
+            //Assert ile beklenen sonuçların elde edilip edilmediği kontrol edilir.
 
-            //Adım 1: Arrange (Düzenleme)
+
+            ////Arrange
+
             //Bu aşamada test senaryosu için gerekli olan tüm bağımlılıklar ve başlangıç durumu ayarlanır.
             //Dummy Data ile Mock Nesnelerinin Ayarlanması
 
-
-            //Amaç: SetupSequence GetInput metoduna yapılan her çağrının farklı bir girdiyi döndürmesini sağlamak.
-            //Kullanıcı, adı, soyadı, telefon numarası ve şifre bilgilerini sırasıyla giriyor gibi simüle edilir.
             _mockUserInput.SetupSequence(input => input.GetInput())
                      .Returns("A")  // Name'in kısa olması
                      .Returns("Gemici")
@@ -48,44 +54,38 @@ namespace xUnitCaseStudy.Tests
 
             var userRegistration = new UserRegister(_mockUserInput.Object, _mockUserOutput.Object);
 
-            // Act
-            //Bu satır, test edilen kodun çağrılmasını sağlar.
-            //Act bölümü, bir birim testinde işlem adımını ifade eder. İşlem, testin amacına uygun olarak bir metodun çağrılmasını veya bir işlemin gerçekleştirilmesini içerir.
-            userRegistration.RegisterUser();
-
-            // Assert - Yazılan testin doğru şekilde çalışıp çalışmadığını doğrulamak için kullanılır.
-            //Bu satır, Mock nesnesinin belirli bir metodu beklendiği gibi çağırıp çağırmadığını kontrol eder.
-            //output.WriteOutput "Name is invalid." argümanının, metodun çağrıldığı sırada gönderilen argüman olduğunu ifade eder
-            _mockUserOutput.Verify(output => output.WriteOutput("Name is invalid."));
-
-            //Bu Kod Ne Yapıyor?
-            //Test, kullanıcı kaydı sırasında adı çok kısa olan bir giriş için doğru hatanın yazdırıldığını doğruluyor.
+            //Amaç: SetupSequence GetInput metoduna yapılan her çağrının sıralı bir girdiyi döndürmesini sağlamak.
+            //Kullanıcı, adı, soyadı, telefon numarası ve şifre bilgilerini sırasıyla giriyor gibi simüle edilir.
 
             //Şu durumu kontrol eder:
-            //Kullanıcı adı "Jo" olduğunda(çok kısa),
-            //WriteOutput("Name is invalid.") metodunun bir kez çağrılıp çağrılmadığını kontrol eder.
+            //Kullanıcı adı "A" olduğunda(çok kısa),
+            //WriteOutput("Name is invalid.") validasyonunun çağrılıp çağrılmadığını kontrol eder.
 
-            //Eğer:
-            //Metod hiç çağrılmazsa veya başka bir argüman ile çağrılırsa: Test başarısız olur.
-            //Metod tam olarak bir kez ve doğru argümanla çağrılmışsa: Test başarılı olur.
 
-            //Unit Testler Reverse şeklindede yazılabilir.
-            //404 Response Örneği:
-            //Bir servis, aradığı bir kaynağı bulamadığında 404 Not Found dönebilir.Bu, olumsuz bir durum gibi görünebilir, ancak doğru bir davranıştır.
-            //Testin amacı: Servis, gerçekten bulunamayan bir kaynak için 404 Response döndürüyor mu?
-            //Bu, "negatif bir durumu doğru şekilde ele alıyor mu?" sorusunun cevabını kontrol etmek için yapılan bir testtir.
+            ////Act
+
+            //Bu satır, test edilen kodun çağrılmasını sağlar.
+            //Act bölümü, bir birim testinde işlem adımını ifade eder. İşlem, testin amacına uygun olarak
+            //bir metodun çağrılmasını veya bir işlemin gerçekleştirilmesini içerir.
+            userRegistration.RegisterUser();
+
+            //// Assert 
+
+            //Bu satır, Yazılan testin doğru şekilde çalışıp çalışmadığını doğrulamak için kullanılır.
+            //output.WriteOutput "Name is invalid." mesajını, metodun çağrıldığı sırada gönderilen mesaj olduğunu ifade eder.
+            _mockUserOutput.Verify(output => output.WriteOutput("Name is invalid."));
+
+            //Eğer: Metod tam olarak doğru argümanla çağrılmışsa: Test başarılı olur.
+
+
+
+
 
             //Doğru Test Prensipleri:
             //Pozitif ve Negatif Senaryoları Test Etme:
 
             //Pozitif Senaryo: Doğru verilerle doğru çıktıyı kontrol etme.
             //Negatif Senaryo: Hatalı veya eksik verilerle beklenen hata durumunu kontrol etme.
-            //Negatif Senaryoların Önemi:
-
-            //Kullanıcıya doğru hata mesajlarını göstermek ve doğru durum kodlarını döndürmek, uygulamanın güvenilirliğini artırır.
-            //Örneğin:
-            //Bir sistem, olmayan bir ürün için 404 döndürmelidir(beklenen davranış).
-            //Ancak aynı sistem, bu durumda 500 döndürüyorsa(beklenmeyen davranış), bir sorun olduğunu gösterir.
         }
 
         [Fact]

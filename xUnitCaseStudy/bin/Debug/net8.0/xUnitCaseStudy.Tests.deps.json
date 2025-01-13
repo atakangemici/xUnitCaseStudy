@@ -416,10 +416,7 @@
           "Microsoft.Extensions.DependencyInjection": "9.0.0"
         },
         "runtime": {
-          "xUnitCaseStudy.App.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "xUnitCaseStudy.App.dll": {}
         }
       }
     }
